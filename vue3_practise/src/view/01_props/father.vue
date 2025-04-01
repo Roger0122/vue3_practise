@@ -9,7 +9,7 @@
 
 <script setup>
   import { ref } from "vue";
-  import sun from "./sun.vue"
+  import sun from "./sun.vue";
   let BigMoney = ref(10000)
 
 </script>
