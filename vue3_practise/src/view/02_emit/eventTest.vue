@@ -11,10 +11,6 @@
 <Event1 @click="handler3"></Event1>
 <hr>
 <Event2 @sonEvent2="handler4" @click="handler5"></Event2>
-
-
-
-
 </div>
 
 
