@@ -32,7 +32,6 @@ const info2 = (parm1,parm2) =>{
   money2.value= parm1
 }
 
-
 </script>
 
 <style scoped>
