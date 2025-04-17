@@ -3,7 +3,8 @@
 // import EventTest from "./view/02_emit/eventTest.vue";
 // import eventFather from "./view/03_event-bus/eventFather.vue";
 // import VmodelTest from './view/04_V_model/VmodelTest.vue';
-import useAttrs from './view/05_useAttrs/useAttrsTest.vue';
+// import useAttrs from './view/05_useAttrs/useAttrsTest.vue';
+import reftest from './view/06_ref/reftest.vue';
 
 </script>
 
@@ -12,7 +13,8 @@ import useAttrs from './view/05_useAttrs/useAttrsTest.vue';
 <!-- <EventTest/> -->
 <!-- <eventFather/> -->
 <!-- <VmodelTest/>  -->
-<useAttrs/>
+<!-- <useAttrs/> -->
+<reftest/>
 
 </template>
 
