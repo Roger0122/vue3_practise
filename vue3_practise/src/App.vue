@@ -5,6 +5,7 @@
 // import VmodelTest from './view/04_V_model/VmodelTest.vue';
 // import useAttrs from './view/05_useAttrs/useAttrsTest.vue';
 import reftest from './view/06_ref/reftest.vue';
+import provide from './view/07_provide_inject/provide_injecttest.vue';
 
 </script>
 
@@ -14,7 +15,9 @@ import reftest from './view/06_ref/reftest.vue';
 <!-- <eventFather/> -->
 <!-- <VmodelTest/>  -->
 <!-- <useAttrs/> -->
-<reftest/>
+<!-- <reftest/> -->
+<provide/>
+
 
 </template>
 
