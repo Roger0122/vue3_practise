@@ -7,6 +7,8 @@ import model from '@/view/04_V_model/VmodelTest.vue';
 import useAttrs from '@/view/05_useAttrs/useAttrsTest.vue';
 import ref from '@/view/06_ref/reftest.vue';
 import provide from '@/view/07_provide_inject/provide_injecttest.vue'
+import jslearn from '@/view/javaScript_learn/index.vue'
+
 
 const router = createRouter({
 history: createWebHistory(),
@@ -51,6 +53,11 @@ routes: [
         path:'/07_provide_inject',
         name:'/07_provide_inject',
         component: provide,
+    },   
+    {
+        path:'/jslearn',
+        name:'/jslearn',
+        component: jslearn,
     },        
 ],
 })

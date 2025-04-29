@@ -13,6 +13,9 @@ import { RouterLink, RouterView } from 'vue-router';
     <div class="link"><RouterLink to="/06_ref">06_ref</RouterLink></div>
     <div class="link"><RouterLink to="/07_provide_inject">07_provide_inject</RouterLink></div>
 </nav>
+<nav>
+    <div class="link"><RouterLink to="/jslearn">/jslearn</RouterLink></div>
+</nav>
 <main>
 <RouterView/>
 </main>
