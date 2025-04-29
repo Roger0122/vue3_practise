@@ -15,6 +15,8 @@ import { RouterLink, RouterView } from 'vue-router';
 </nav>
 <nav>
     <div class="link"><RouterLink to="/jslearn">/jslearn</RouterLink></div>
+    <div class="link"><RouterLink to="/jslearn2">/jslearn2</RouterLink></div>
+
 </nav>
 <main>
 <RouterView/>
