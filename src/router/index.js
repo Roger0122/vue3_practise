@@ -8,7 +8,8 @@ import useAttrs from '@/view/05_useAttrs/useAttrsTest.vue';
 import ref from '@/view/06_ref/reftest.vue';
 import provide from '@/view/07_provide_inject/provide_injecttest.vue'
 import jslearn from '@/view/javaScript_learn/index.vue'
-import jslearn2 from '@/view/javaScript_learn/learm2.vue'
+import jslearn2 from '@/view/javaScript_learn/learn2.vue'
+import jslearn3 from '@/view/javaScript_learn/learn3.vue'
 
 
 const router = createRouter({
@@ -64,6 +65,12 @@ routes: [
         path:'/jslearn2',
         name:'/jslearn2',
         component:jslearn2
+        ,
+    },
+    {
+        path:'/jslearn3',
+        name:'/jslearn3',
+        component:jslearn3
         ,
     },
 
