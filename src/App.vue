@@ -1,9 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import navbar from '@/view/navbar.vue'
 </script>
 
 <template>
-<nav>
+    <nav>
+        <navbar/>
+    </nav>
+<!-- <nav>
     <div class="link"><RouterLink to="/">Home</RouterLink></div>
     <div class="link"><RouterLink to="/01_props">01_props</RouterLink></div>
     <div class="link"><RouterLink to="/02_emit">02_emit</RouterLink></div>
@@ -21,7 +25,7 @@ import { RouterLink, RouterView } from 'vue-router';
 </nav>
 <nav>
     <div class="link"><RouterLink to="/todolist">todolist</RouterLink></div>
-</nav>
+</nav> -->
 <main>
 <RouterView/>
 </main>
