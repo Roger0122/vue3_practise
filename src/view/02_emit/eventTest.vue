@@ -4,9 +4,10 @@
 <h2>關於事件的回調</h2>
 
 
-<button @click="handler">點我看看觸發原生DOM事件</button>
+<MyButton type="primary" @onClick="handler">點我看看觸發原生DOM事件</MyButton>
 <hr>
-<button @click="handler2(1,2,3, $event)">可傳遞參數</button>
+<MyButton type="primary" @onClick="handler2(1,2,3, $event)">可傳遞參數</MyButton>
+
 <hr>
 <Event1 @click="handler3"></Event1>
 <hr>
@@ -19,6 +20,7 @@
 <script setup>
 import Event1 from './event1.vue';
 import Event2 from './event2.vue';
+import MyButton from '@/view/ui/button.vue'
 
 
 // 原生DOM事件

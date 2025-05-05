@@ -4,12 +4,14 @@
     <p>{{ message }}</p>
    <p>{{ BigMoney }}</p>
    
-   <button @click="fatherGift"> 我看看父親給我甚麼</button>
+   <MyButton type="primary" @onClick="fatherGift">我看看父親給我甚麼</MyButton>
   </div>
 </template>
 
 
 <script setup>
+import MyButton from '@/view/ui/button.vue'
+
 let props=  defineProps(['message','BigMoney'])
 const fatherGift= () =>{
   console.log(props.BigMoney);

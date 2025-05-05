@@ -1,7 +1,8 @@
 <template>
 <div class="sonEvent">
 <h3>兒子組件</h3>
-<button>子組件</button>
+<Mybutton type="primary">子組按件</Mybutton>
+
 <input type="text">
 
 </div>
@@ -9,6 +10,9 @@
 </template>
 
 <script setup>
+import Mybutton from '@/view/ui/button.vue'
+
+
 </script>
 
 <style scoped>
