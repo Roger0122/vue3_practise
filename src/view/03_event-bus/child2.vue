@@ -1,12 +1,13 @@
 <template>
   <h1 class="child2">我是兒子2</h1>
-  <button @click="forSon1Money">給兒子1錢錢</button>
+  <Mybutton type="primary" @onClick="forSon1Money">給兒子1錢錢</Mybutton>
 
   </template>
   
   <script setup>
   //先引入物件
   import emitter from '../../../money';
+  import Mybutton from '@/view/ui/button.vue'
 
   //  事件的回調
   const forSon1Money= (()=>{

@@ -1,12 +1,15 @@
 <template>
   <div class="sonEvent2">
     <h3>二兒子的自己定義事件</h3>
-    <button @click="handler">點級我觸發自己定義事件</button>
-    <button @click="emit('click','哈哈哈','呼呼呼')">自訂一參數 click</button>
+    <MyButton type="primary" @onClick="handler">點我觸發自己定義事件</MyButton>
+    <MyButton type="primary" @onClick="emit('click','哈哈哈','呼呼呼')">定義事件參數 click</MyButton>
   </div>
 </template>
 
 <script setup>
+import MyButton from '@/view/ui/button.vue'
+
+
 // 不需要引入可以直接使用 defineEmits
 let emit = defineEmits(["sonEvent2","click"]);
 
