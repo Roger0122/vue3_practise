@@ -5,7 +5,7 @@
     <input type="text" v-model="editContent">
     <!-- <button class="forSureBtn" @click="confirm">確認</button> -->
     <MyButton type="primary" @onClick="confirm">確認</MyButton>
-    <MyButton type="primary" @onClick="$emit('cancel')">取消</MyButton>
+    <MyButton type="cancel" @onClick="$emit('cancel')">取消</MyButton>
     <!-- <button class="forCancelBtn" @click="$emit('cancel')">取消</button> -->
 </template>
 
