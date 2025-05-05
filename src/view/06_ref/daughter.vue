@@ -1,8 +1,8 @@
 <template>
   <div class="daughter">
     <p>女兒有:{{ money }}元</p>
-    <button @click="handler($parent)">父親給我1000元</button>
-
+    <!-- <button @click="handler($parent)">父親給我1000元</button> -->
+    <Mybutton type="primary" @onClick="handler($parent)">父親給我1000元</Mybutton>
   </div>
   
   
@@ -10,7 +10,8 @@
   
   <script setup lang="ts">
   import { ref } from 'vue';
-  
+  import Mybutton from '@/view/ui/button.vue'
+
   let money = ref(300);
   
   const handler = ($parent)=>{

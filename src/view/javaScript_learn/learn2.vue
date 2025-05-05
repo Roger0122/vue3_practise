@@ -5,11 +5,14 @@
     <p>函式型別 ：function 可以讓你 執行某項任務，並回傳一個新的值</p>
     <p>例如: function add(a, b) { return a + b; }</p>
     <p>就可以在呼叫add(1,2) 時會傳結果 1+2 = 3</p>
-    <p>舉例:{{ Numberone}} +{{ Numbertwo}} <button @click="sum = Numberone + Numbertwo">等於</button>{{ sum }}</p>
+    <p>舉例:{{ Numberone}} +{{ Numbertwo}}
+        <Mybutton type="primary" @onClick="sum = Numberone + Numbertwo">等於</Mybutton>
+    {{ sum }}</p>
 
     </template>
     <script setup lang="ts">
     import { ref } from 'vue';
+    import Mybutton from '@/view/ui/button.vue'
     const sum  =ref();
     const Numberone =ref(1);
     const Numbertwo =ref(2);

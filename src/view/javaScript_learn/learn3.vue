@@ -9,11 +9,12 @@
 
   <p v-if="show">show:123</p>
   <p v-else="!show">被隱藏</p>
-  <button v-on:click="show = !show">V-if隱藏</button>
+  <MyButton type="primary" v-on:onClick="show = !show">V-if隱藏</MyButton>
 
   <p v-show="show2">v-show2:123</p>
-  <button v-on:click="show2 = !show2">V-show隱藏</button>
-  
+  <!-- <button v-on:click="show2 = !show2">V-show隱藏</button> -->
+  <MyButton type="primary" v-on:onClick="show2 = !show2">V-show隱藏</MyButton>
+
   <p>v-for 渲染結果</p>
   <p v-for="(value, key, index) in animal" :key="index" >{{key}}-{{value}}</p>
 
@@ -23,6 +24,8 @@
   <script setup lang="ts">
 
   import { ref } from 'vue';
+  import MyButton from '@/view/ui/button.vue'
+
   const animal = ref({
     dog:'dog1',
     cat:'cat2',

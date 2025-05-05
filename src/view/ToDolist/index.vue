@@ -7,14 +7,16 @@
     placeholder="請輸入代辦事項"
     v-model="content"
   />
-  <button @click="summit">送出</button>
+  <!-- <button @click="summit">送出</button> -->
+  <MyButton type="primary" @onClick="summit">送出</MyButton>
 
   <p>輸入文字: {{ content }}</p>
 
   <div v-for="(item, index) in TodoList" :key="item.id">
     {{ item.title }}
-    <button @click="remove(index)">remove</button>
-    <button @click="edit(index)">edit</button>
+    <MyButton type="danger" @onClick="remove(index)">remove</MyButton>
+    <MyButton type="secondary" @onClick="edit(index)">edit</MyButton>
+    
   </div>
 
   <div v-if="editShow" class="modal-overlay" @click.self="editShow = false">
@@ -30,7 +32,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import EditTodoList from '@/components/todo/EditTodoList.vue'
-
+import MyButton from '@/view/ui/button.vue'
 
 const editShow = ref(false)
 const editContent = ref('')

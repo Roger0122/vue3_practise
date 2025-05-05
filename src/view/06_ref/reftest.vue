@@ -1,7 +1,8 @@
 <template>
   <div class="father">
     <h1>父親有:{{ money }}元</h1>
-    <button @click="handler">跟兒子借錢借1000元</button>
+    <!-- <button @click="handler">跟兒子借錢借1000元</button> -->
+    <MyButton type="primary" @onClick="handler">跟兒子借錢借1000元</MyButton>
     <son ref="sonMoney"></son>
     <daughter></daughter>
   </div>  
@@ -11,7 +12,7 @@
 import { ref } from 'vue';
 import son from './son.vue'
 import daughter from './daughter.vue'
-
+import MyButton from '@/view/ui/button.vue'
 
 
 

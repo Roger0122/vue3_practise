@@ -3,12 +3,15 @@
         <h1>編輯代辦事項</h1>
     </div>
     <input type="text" v-model="editContent">
-    <button class="forSureBtn" @click="confirm">確認</button>
-    <button class="forCancelBtn" @click="$emit('cancel')">取消</button>
+    <!-- <button class="forSureBtn" @click="confirm">確認</button> -->
+    <MyButton type="primary" @onClick="confirm">確認</MyButton>
+    <MyButton type="primary" @onClick="$emit('cancel')">取消</MyButton>
+    <!-- <button class="forCancelBtn" @click="$emit('cancel')">取消</button> -->
 </template>
 
 <script setup lang="ts">
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import MyButton from '@/view/ui/button.vue'
 
 const props = defineProps<{
  modelValue: string
