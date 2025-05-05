@@ -11,6 +11,7 @@ import jslearn from '@/view/javaScript_learn/index.vue'
 import jslearn2 from '@/view/javaScript_learn/learn2.vue'
 import jslearn3 from '@/view/javaScript_learn/learn3.vue'
 import todolist from '@/view/ToDolist/index.vue'
+import jslearn4 from '@/view/javaScript_learn/learn4.vue'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -71,6 +72,12 @@ routes: [
         path:'/jslearn3',
         name:'/jslearn3',
         component:jslearn3
+        ,
+    },
+    {
+        path:'/jslearn4',
+        name:'/jslearn4',
+        component:jslearn4
         ,
     },
     {
