@@ -14,11 +14,27 @@
   <div v-for="(item, index) in TodoList" :key="item.id">
     {{ item.title }}
     <button @click="remove(index)">remove</button>
+    <button @click="edit(index)">edit</button>
   </div>
+
+  <div v-if="editShow" class="modal-overlay" @click.self="editShow = false">
+    <EditTodoList
+    :modelValue ="editContent"
+    @update="applyEdit"
+    @cancel="editShow = false"
+    />
+  </div>
+
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import EditTodoList from '@/components/todo/EditTodoList.vue'
+
+
+const editShow = ref(false)
+const editContent = ref('')
+const editingIndex = ref<number | null>(null)
 
 const content = ref('')
 const TodoList = ref([
@@ -42,7 +58,33 @@ const summit = () => {
 const remove = (index: number) => {
   TodoList.value.splice(index, 1)
 }
+
+const edit = (index: number) => {
+  editShow.value = true
+  editingIndex.value = index
+  editContent.value=TodoList.value[index].title
+}
+
+const applyEdit = (newTitle: string) => {
+  if (editingIndex.value !== null){
+    TodoList.value[editingIndex.value].title = newTitle
+  }
+  editShow.value = false
+}
+
 </script>
 
 <style scoped>
+.modal-overlay{
+position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 </style>
