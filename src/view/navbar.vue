@@ -3,7 +3,7 @@
 
     <div>
       <ul>
-        <li><div class="link"><RouterLink to="/">Home</RouterLink></div></li>
+        <li><div class="link"><RouterLink to="/"><img src="@/assets/img/home.png" alt="HOME"></RouterLink></div></li>
       </ul>
     </div>
     <div>
@@ -49,5 +49,15 @@ import { RouterLink } from 'vue-router';
   padding: 0 20px;
 }
 
+li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link img {
+  width: 50px;  /* 或你要的大小 */
+  height: 50px; /* 或 auto 保持比例 */
+}
 
 </style>
