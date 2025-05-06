@@ -1,22 +1,19 @@
 <template>
-  <main>
-    <h1>Todo_list</h1>
-  </main>
-
+  <h1>Todo_list</h1>
+  
+  <form>
   <input
     placeholder="請輸入代辦事項"
     v-model="content"
   />
-  <!-- <button @click="summit">送出</button> -->
   <MyButton type="primary" @onClick="summit">送出</MyButton>
+  </form>
 
-  <p>輸入文字: {{ content }}</p>
 
   <div v-for="(item, index) in TodoList" :key="item.id">
     {{ item.title }}
     <MyButton type="danger" @onClick="remove(index)">remove</MyButton>
     <MyButton type="secondary" @onClick="edit(index)">edit</MyButton>
-    
   </div>
 
   <div v-if="editShow" class="modal-overlay" @click.self="editShow = false">
@@ -64,7 +61,7 @@ const remove = (index: number) => {
 const edit = (index: number) => {
   editShow.value = true
   editingIndex.value = index
-  editContent.value=TodoList.value[index].title
+  editContent.value = TodoList.value[index].title
 }
 
 const applyEdit = (newTitle: string) => {
@@ -88,5 +85,8 @@ position: fixed;
   justify-content: center;
   align-items: center;
   z-index: 999;
+}
+div{
+  margin-top: 5px;
 }
 </style>

@@ -3,10 +3,8 @@
         <h1>編輯代辦事項</h1>
     </div>
     <input type="text" v-model="editContent">
-    <!-- <button class="forSureBtn" @click="confirm">確認</button> -->
     <MyButton type="primary" @onClick="confirm">確認</MyButton>
     <MyButton type="cancel" @onClick="$emit('cancel')">取消</MyButton>
-    <!-- <button class="forCancelBtn" @click="$emit('cancel')">取消</button> -->
 </template>
 
 <script setup lang="ts">
@@ -25,7 +23,7 @@ const emit = defineEmits<{
 const editContent = ref (props.modelValue)
 
 watch(() => props.modelValue, (newVal) => {
-    editContent.value =newVal
+    editContent.value = newVal
 })
 
 
