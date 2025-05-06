@@ -62,4 +62,12 @@ li{
   height: 50px; /* 或 auto 保持比例 */
 }
 
+.link {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 16px;
+  text-align: center;;
+  transition: color 0.3s ease;
+}
+
 </style>
