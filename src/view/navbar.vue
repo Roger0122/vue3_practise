@@ -32,6 +32,7 @@
     <ul>
       <li><div class="link"><RouterLink to="/todolist">todolist</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/bmi">bmi</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/shopcar">shopcar</RouterLink></div></li>
     </ul>
   </div>
 </div>

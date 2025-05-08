@@ -15,6 +15,7 @@ import jslearn3 from '@/view/javaScript_learn/learn3.vue'
 import todolist from '@/view/ToDolist/index.vue'
 import jslearn4 from '@/view/javaScript_learn/learn4.vue'
 import bmi from '@/view/bmi/index.vue'
+import shopcar from '@/view/ShopCar/ShopCar.vue'
 
 
 const router = createRouter({
@@ -106,6 +107,12 @@ routes: [
         path:'/bmi',
         name:'/bmi',
         component:bmi
+        ,
+    },
+    {
+        path:'/shopcar',
+        name:'/shopcar',
+        component:shopcar
         ,
     },
 
