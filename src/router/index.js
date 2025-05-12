@@ -16,7 +16,8 @@ import todolist from '@/view/ToDolist/index.vue'
 import jslearn4 from '@/view/javaScript_learn/learn4.vue'
 import bmi from '@/view/bmi/index.vue'
 import shopcar from '@/view/ShopCar/ShopCar.vue'
-
+import pdf from '@/view/pdf/pdf.vue'
+import excel from '@/view/pdf/excel.vue'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -114,6 +115,16 @@ routes: [
         name:'/shopcar',
         component:shopcar
         ,
+    },
+    {
+        path:'/pdf',
+        name:'/pdf',
+        component:pdf,
+    },
+     {
+        path:'/excel',
+        name:'/excel',
+        component:excel,
     },
 
 ],
