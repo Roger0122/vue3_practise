@@ -1,7 +1,7 @@
 <template>
   <h1>Todo_list</h1>
   
-  <form>
+  <form @submit.prevent="summit">
   <input
     placeholder="請輸入代辦事項"
     v-model="content"

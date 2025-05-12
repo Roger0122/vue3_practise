@@ -1,6 +1,6 @@
 <template>
   <div class="father">
-    <h1>我是父親組件</h1>
+    <h1 >我是父親組件</h1>
     <hr>
     <sun message="你好啊兒子" :BigMoney="BigMoney"></sun>
   </div>

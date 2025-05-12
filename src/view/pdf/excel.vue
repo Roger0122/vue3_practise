@@ -140,9 +140,4 @@ table, th, td {
   font-size: 12px;
 }
 
-td {
-  max-width: 200px;
-  word-break: break-word;
-}
-
 </style>
