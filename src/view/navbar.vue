@@ -16,8 +16,8 @@
         <li><div class="link"><RouterLink to="/06_ref">06_ref</RouterLink></div></li>
         <li><div class="link"><RouterLink to="/07_provide_inject">07_provide_inject</RouterLink></div></li>
         <li><div class="link"><RouterLink to="/08_slottest">08_slot_test</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/08_slottest/slot01">slot01</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/09_v_bind">vbind</RouterLink></div></li>
+        <li><div class="link"><RouterLink to="/08_slottest/slot01">08-2_slot01</RouterLink></div></li>
+        <li><div class="link"><RouterLink to="/09_v_bind">09_vbind</RouterLink></div></li>
       </ul>
     </div>
 
