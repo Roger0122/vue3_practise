@@ -18,6 +18,7 @@ import bmi from '@/view/bmi/index.vue'
 import shopcar from '@/view/ShopCar/ShopCar.vue'
 import pdf from '@/view/pdf/pdf.vue'
 import excel from '@/view/pdf/excel.vue'
+import vbind from '@/view/09_bind/v_bind.vue'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -73,8 +74,13 @@ routes: [
             name:'slot01',
             component: slot01,
             }
-          ],
-    },      
+        ],
+    },
+    {
+        path:'/09_v_bind',
+        name:'/09_v_bind',
+        component: vbind,
+    },
     {
         path:'/jslearn',
         name:'/jslearn',
