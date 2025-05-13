@@ -26,15 +26,56 @@
     <input class='border-spacing-2'  type="text" v-model="usd"  />
   </div>
 
+  <span>Textarea: {{ Message }}</span>
+  <div class="bg-red-200 px-4 py-2 rounded-lg">
+    <textarea v-model.lazy="Message"></textarea>
+  </div>
+  <div class="bg-red-300 px-4 py-2 rounded-lg">
+    <textarea>{{ Message }}</textarea>
+  </div>
+
+  <h2>radio</h2>
+  <div>
+    <input type="radio" v-model="picked" value="1" /> 1
+    <input type="radio" v-model="picked" value="2" /> 2
+    <input type="radio" v-model="picked" value="3" /> 3
+  </div>
+  <div>
+    <span>選單選項: {{ picked }}</span>
+  </div>
+  
+  <h2>checkbox</h2>
+  <div>
+    <input type="checkbox" id="Jack" v-model="checkNames" value="Jack">
+    <label for="Jack">Jack</label>
+    <input type="checkbox" id="John" v-model="checkNames" value="John">
+    <label for="John">John</label>
+    <input type="checkbox" id="Jane" v-model="checkNames" value="Jane">
+    <label for="Jane">Jane</label>
+    <input type="checkbox" id="Roger" v-model="checkNames" value="Roger">
+    <label for="Roger">Roger</label>
+  </div>
+  <div>Data:{{ checkNames }}</div>
+
+
+  <div>
+    <input type="checkbox" id="isChecked" v-model="isChecked">
+    <label for="isChecked">isChecked: {{ isChecked }}</label>
+  </div>
+
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+const isChecked =ref (false)
+const checkNames = ref([])
+const Message =ref('Hello World')
 const CanUser = ref(true)
 const colorChange = ref(true)
 const colorText = ref('紅色')
 const isActive = ref(true)
+const picked = ref(1);
 // 核心幣值（日圓），以它為基準進行雙向換算
 const jpy = ref('')
 const dollars = ref([
