@@ -26,6 +26,7 @@
     <input class='border-spacing-2'  type="text" v-model="usd"  />
   </div>
 
+    <!-- 修飾詞lazy 可以不那麼頻繁去更新資料，只有使用者在離開輸入框後更新 -->
   <span>Textarea: {{ Message }}</span>
   <div class="bg-red-200 px-4 py-2 rounded-lg">
     <textarea v-model.lazy="Message"></textarea>
@@ -34,6 +35,7 @@
     <textarea>{{ Message }}</textarea>
   </div>
 
+  <!-- input 可以知道勾選到的是哪一個值 -->
   <h2>radio</h2>
   <div>
     <input type="radio" v-model="picked" value="1" /> 1
@@ -44,6 +46,7 @@
     <span>選單選項: {{ picked }}</span>
   </div>
   
+  <!-- checkbox 多選,資料儲存型態是Array -->
   <h2>checkbox</h2>
   <div>
     <input type="checkbox" id="Jack" v-model="checkNames" value="Jack">
@@ -57,16 +60,42 @@
   </div>
   <div>Data:{{ checkNames }}</div>
 
-
+  <!-- checkbox 勾選狀態 -->
   <div>
     <input type="checkbox" id="isChecked" v-model="isChecked">
     <label for="isChecked">isChecked: {{ isChecked }}</label>
   </div>
 
+  <!-- 直接讓數字相加,結果=字串相加, 修飾詞number 可以讓資料型態成為數字相加 -->
+  <input v-model.number="textNum1" /> + <input v-model.number="textNum2" /> = {{ textNumSum }}
+
+ <!-- 修飾詞 trim 可已移除前後空白符號 -->
+ <div> 
+ <input type="text" v-model.trim="msg" />
+ 這段中文不會有前後空白符號:真的{{ msg }}不會有
+</div>
+
+<!-- v-text 處理文字模板 -->
+<div v-text="text"></div>
+<div> {{ text }} world</div>
+<!-- 原始顯示{{ }} -->
+<div v-pre>{{ text }}</div>
+
+<!-- 綁定條件 -->
+<input type="text" v-model.trim="message"  :class= "{ 'error': message.length >= 3 }"/>
+
+
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+const text =  ref('Hello')
+  
+const message = ref('')
+const msg = ref('');
+const textNum1 = ref(0)
+const textNum2 = ref(0)
+const textNumSum = computed(() => textNum1.value + textNum2.value)
 
 const isChecked =ref (false)
 const checkNames = ref([])
@@ -149,4 +178,10 @@ const usd = computed({
   background-color: gray;
   color: white;
 }
+
+.error {
+  border: red solid 1px;
+  color: red;
+}
+
 </style>
