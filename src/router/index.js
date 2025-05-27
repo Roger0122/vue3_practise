@@ -20,6 +20,7 @@ import pdf from '@/view/pdf/pdf.vue'
 import excel from '@/view/pdf/excel.vue'
 import vbind from '@/view/09_bind/v_bind.vue'
 import PaymentTypeEdit from '@/view/Paymentload/PaymentTypeEdit.vue'
+import PaymentTypeEdit2 from '@/view/Paymentload/PaymentTypeEdit2.vue'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -138,8 +139,11 @@ routes: [
         name:'/PaymentTypeEdit',
         component:PaymentTypeEdit
     },
-
+    {
+        path: '/PaymentTypeEdit2',
+        name:'/PaymentTypeEdit2',
+        component:PaymentTypeEdit2
+    },
 ],
 })
-
 export default router
