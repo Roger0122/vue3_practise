@@ -19,6 +19,7 @@ import shopcar from '@/view/ShopCar/ShopCar.vue'
 import pdf from '@/view/pdf/pdf.vue'
 import excel from '@/view/pdf/excel.vue'
 import vbind from '@/view/09_bind/v_bind.vue'
+import PaymentTypeEdit from '@/view/Paymentload/PaymentTypeEdit.vue'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -127,10 +128,15 @@ routes: [
         name:'/pdf',
         component:pdf,
     },
-     {
+    {
         path:'/excel',
         name:'/excel',
         component:excel,
+    },
+    {
+        path: '/PaymentTypeEdit',
+        name:'/PaymentTypeEdit',
+        component:PaymentTypeEdit
     },
 
 ],

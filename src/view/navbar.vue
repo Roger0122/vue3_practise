@@ -36,9 +36,14 @@
       <li><div class="link"><RouterLink to="/shopcar">shopcar</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/pdf">pdf</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/excel">excel</RouterLink></div></li>
-      
     </ul>
   </div>
+  <div>
+    <ul>
+      <li><div class="link"><RouterLink to="/PaymentTypeEdit">PaymentTypeEdit</RouterLink></div></li>
+    </ul>
+  </div>
+
 </div>
 
 </template>
