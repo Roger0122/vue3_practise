@@ -42,6 +42,7 @@
     <ul>
       <li><div class="link"><RouterLink to="/PaymentTypeEdit">PaymentTypeEdit</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/PaymentTypeEdit2">PaymentTypeEdit2</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/ProductType">ProductType</RouterLink></div></li>      
     </ul>
   </div>
 
