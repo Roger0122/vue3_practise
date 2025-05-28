@@ -8,7 +8,7 @@
     <hr>
     <sun2 
       title="標題"
-      count=10
+      :count= 10
       :items="['蘋果','香蕉','橘子']"
       :level="{level:1,color:'red',}"
         v-model="MoneyIsGood"

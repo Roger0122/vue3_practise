@@ -8,14 +8,8 @@
 
 </main>
 <footer>
-
+<p>123</p>
 </footer>
-
-
-
-
-
-
 </template>
 
 <script setup lang="ts">

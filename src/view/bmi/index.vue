@@ -10,7 +10,7 @@
 <div>
 <Mybotton type="primary" @onClick="calc">計算</Mybotton>
 </div>
-<result :bmi="bmi" :height="height" :weight="weight"  @reset="resetForm"></result>
+<result :bmi="bmi ?? 0" :height="height ?? 0" :weight="weight ?? 0"  @reset="resetForm"></result>
 
 
 </div>
@@ -27,16 +27,16 @@ const weight =ref();
 const bmi =ref();
 
 const calc = () =>{
-   bmi.value = weight.value / (height.value / 100)**2
-   bmi.value = bmi.value.toFixed(2)
+   bmi.value = Number(weight.value / (height.value / 100)**2)
+   bmi.value = Number(bmi.value.toFixed(2))
 
   //  emit('calc',bmi.value)
 }
 
 const resetForm = () =>{
-  height.value = '';
-  weight.value = '';
-  bmi.value = '';
+  height.value = 0;
+  weight.value = 0;
+  bmi.value = 0;
 }
 
 </script>
