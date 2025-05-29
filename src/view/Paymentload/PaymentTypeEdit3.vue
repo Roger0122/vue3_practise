@@ -3,7 +3,7 @@
 <!-- 搜尋功能 -->
 <h2>搜尋欄位</h2>
 <input type="text" placeholder="請輸入搜尋結果" v-model="seach">
-<button @click="SeachResult">搜尋看看</button>
+<button class="px-2" @click="SeachResult">搜尋看看</button>
 <button @click="SeCrash">清除</button>
 <p>搜尋結果</p>
 <ul v-if="SeList !==''">
