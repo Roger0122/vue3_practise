@@ -46,7 +46,11 @@
       <li><div class="link"><RouterLink to="/ProductType">ProductType</RouterLink></div></li>      
     </ul>
   </div>
-
+  <div>
+    <ul>
+      <li><div class="link"><RouterLink to="/weather1">weather1</RouterLink></div></li>
+    </ul>
+  </div>
 </div>
 
 </template>
