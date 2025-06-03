@@ -28,6 +28,8 @@
       <li><div class="link"><RouterLink to="/jslearn2">/jslearn2</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/jslearn3">/jslear3</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/jslearn4">/jslear4</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/jslearn5">/jslear5</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/learn6">/jslear6</RouterLink></div></li>
     </ul>
   </div>  
   <div>
@@ -51,6 +53,11 @@
     <ul>
       <li><div class="link"><RouterLink to="/weather1">weather1</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/addition">addition</RouterLink></div></li>
+    </ul>
+  </div>
+    <div>
+    <ul>
+      <li><div class="link"><RouterLink to="/pos">POS</RouterLink></div></li> 
     </ul>
   </div>
 </div>
