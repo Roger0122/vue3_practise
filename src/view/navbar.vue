@@ -9,6 +9,7 @@
     <div>
       <ul>
         <li><div class="link"><RouterLink to="/01_props">01_props</RouterLink></div></li>
+        <li><div class="link"><RouterLink to="/newfather">newfather</RouterLink></div></li>
         <li><div class="link"><RouterLink to="/02_emit">02_emit</RouterLink></div></li>
         <li><div class="link"><RouterLink to="/03_event-bus">03_event-bus</RouterLink></div></li>
         <li><div class="link"><RouterLink to="/04_V_model">04_V_model</RouterLink></div></li>
@@ -49,6 +50,7 @@
   <div>
     <ul>
       <li><div class="link"><RouterLink to="/weather1">weather1</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/addition">addition</RouterLink></div></li>
     </ul>
   </div>
 </div>

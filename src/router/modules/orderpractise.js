@@ -1,35 +1,28 @@
-import todolist from '@/view/ToDolist/index.vue'
-import bmi from '@/view/bmi/index.vue'
-import shopcar from '@/view/ShopCar/ShopCar.vue'
-import pdf from '@/view/pdf/pdf.vue'
-import excel from '@/view/pdf/excel.vue'
-
 export default [
     {
         path:'/todolist',
-        name:'/todolist',
-        component:todolist,
+        name:'todolist',
+        component:() => import('@/view/ToDolist/index.vue'),
     },
     {
         path:'/bmi',
-        name:'/bmi',
-        component:bmi,
+        name:'bmi',
+        component:() => import('@/view/bmi/index.vue'),
     },
     {
         path:'/shopcar',
-        name:'/shopcar',
-        component:shopcar
-        ,
+        name:'shopcar',
+        component:() => import('@/view/ShopCar/ShopCar.vue'),
     },
     {
         path:'/pdf',
-        name:'/pdf',
-        component:pdf,
+        name:'pdf',
+        component:() => import('@/view/pdf/pdf.vue'),
     },
     {
         path:'/excel',
-        name:'/excel',
-        component:excel,
+        name:'excel',
+        component:() => import('@/view/pdf/excel.vue'),
     },
 
 ]
