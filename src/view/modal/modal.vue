@@ -64,6 +64,27 @@
       <button @click="saveBtn" class="bg-teal-700 text-white px-6 py-2 rounded w-full">儲存</button>
     </div>
   </div>
+  <div>
+    <table>
+    <th>
+      <tr>
+        <td>標題</td>
+        <td>價格</td>
+        <td>元</td>
+      </tr>
+      <tr>
+        <td>蘋果</td>
+        <td>10</td>
+        <td>TWD</td>
+      </tr>
+      <tr>
+        <td>香蕉</td>
+        <td>20</td>
+        <td>TWD</td>
+      </tr>
+    </th>
+    </table>
+  </div>
 </template>
 
 <script setup>
@@ -101,6 +122,15 @@ function toggleTopping(label) {
   } else {
     selected.value.toppings.splice(idx, 1)
   }
+}
+
+function saveBtn() {
+  const result = {
+    ice: selected.value.ice,
+    sugar: selected.value.sugar,
+    topping:selected.value.toppings
+  }
+  console.log('結果',result)
 }
 
 
