@@ -30,5 +30,9 @@ export default [
         path:'/learn6',
         name:'learn6',
         component:() => import('@/view/javaScript_learn/learn6.vue')
+    },  
+    {   path:'/modal',
+        name:'modal',
+        component:() => import('@/view/modal/modal.vue')
     },
 ]

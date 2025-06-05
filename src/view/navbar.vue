@@ -30,6 +30,7 @@
       <li><div class="link"><RouterLink to="/jslearn4">/jslear4</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/jslearn5">/jslear5</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/learn6">/jslear6</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/modal">/modal</RouterLink></div></li>
     </ul>
   </div>  
   <div>
