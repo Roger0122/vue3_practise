@@ -47,6 +47,7 @@
       <li><div class="link"><RouterLink to="/PaymentTypeEdit">PaymentTypeEdit</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/PaymentTypeEdit2">PaymentTypeEdit2</RouterLink></div></li>
       <li><div class="link"><RouterLink to="/PaymentTypeEdit3">PaymentTypeEdit3</RouterLink></div></li>
+      <li><div class="link"><RouterLink to="/PaymentTypeEdit4">PaymentTypeEdit4</RouterLink></div></li> 
       <li><div class="link"><RouterLink to="/ProductType">ProductType</RouterLink></div></li>      
     </ul>
   </div>
