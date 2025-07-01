@@ -38,7 +38,7 @@
 
     <h2>if/For 方法</h2>
 
-     <ul>
+    <ul>
         <li><h3>if方法</h3>
         <p>if方法用於判斷資料是否符合條件</p>
             <p>if(1>2) true,`if(1<2) false`</p>
@@ -57,8 +57,8 @@
         <p>for(let i=0;i<10;i++){console.log(i)} 
         </p></li>
 
-     </ul>
-
+    </ul>
+    
     </template>
     <script setup lang="ts">
     

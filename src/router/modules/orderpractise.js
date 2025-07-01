@@ -24,5 +24,9 @@ export default [
         name:'excel',
         component:() => import('@/view/pdf/excel.vue'),
     },
-
+    {
+        path:'/multiplicationTable',
+        name:'multiplicationTable',
+        component:() => import('@/view/multiplication/multiplicationTable.vue'),
+    },
 ]

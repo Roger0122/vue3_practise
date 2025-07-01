@@ -25,6 +25,11 @@ export default [
     component:() => import ('@/view/Paymentload/PaymentTypeEdit4.vue'),
 },
 {
+    path: '/PaymentTypeEdit5',
+    name: 'PaymentTypeEdit5',
+    component:() => import ('@/view/Paymentload/PaymentTypeEdit5.vue'),
+},
+{
     path:'/addition',
     name:'addition',
     component: () => import('../../view/add/addition.vue')

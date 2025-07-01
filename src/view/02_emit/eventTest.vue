@@ -25,7 +25,7 @@ import MyButton from '@/view/ui/button.vue'
 
 // 原生DOM事件
 const handler = () => {
-  console.log(123);
+  console.log('原生觸發DOM');
 }
 
 // 可以傳遞參數
