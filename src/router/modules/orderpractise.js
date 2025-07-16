@@ -29,4 +29,9 @@ export default [
         name:'multiplicationTable',
         component:() => import('@/view/multiplication/multiplicationTable.vue'),
     },
+    {
+        path:'/SimulationTimes',
+        name:'SimulationTimes',
+        component:() => import('@/view/Simulationtimes/SimulationTimes.vue'),
+    },
 ]
