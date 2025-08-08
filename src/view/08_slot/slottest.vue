@@ -42,15 +42,28 @@
   </template>
   </ModalDialog>
 
-  
+  <lingthBox>
+    <!-- 具名插朝- 子提供模板,父親寫顯示資料 -->
+  <template  #he>
+    <h2>頭換成這個</h2>
+  </template>
+    <template #dy>
+    <h2>身體換成這個</h2>
+  </template>
+  <!-- 開洞內容>都會直接被替換成這個 -->
 
-<router-view />
+  <template #ft="slotProps">
+  <div>{{slotProps.on}}</div>
+  <div> {{slotProps.off}}</div>
+  </template>
+  </lingthBox>
 
 </template>
 
 <script setup >
 import slot01 from '@/view/08_slot/slot01.vue';
 import baseCard from '@/view/08_slot/baseCard.vue';
+import lingthBox from '@/view/08_slot/lingthBox.vue'
 import ModalDialog from '../../components/vue/ModalDialog.vue'
 import { ref } from 'vue';
 

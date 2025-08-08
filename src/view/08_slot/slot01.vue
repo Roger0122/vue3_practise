@@ -9,7 +9,6 @@
   <footer>
     <slot name="footer">default footer</slot>
   </footer>
-  <slot></slot>
 
 
   
