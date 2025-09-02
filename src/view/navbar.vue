@@ -1,106 +1,74 @@
 <template>
-<div class="navbar">
+  <nav class="navbar">
+    <RouterLink class="link" to="/" @click="closeAll">
+      <img src="@/assets/img/home.png" alt="HOME" />
+    </RouterLink>
 
-    <div>
-      <ul>
-        <li><div class="link"><RouterLink to="/"><img src="@/assets/img/home.png" alt="HOME"></RouterLink></div></li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li><div class="link"><RouterLink to="/01_props">01_props</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/newfather">newfather</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/02_emit">02_emit</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/03_event-bus">03_event-bus</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/04_V_model">04_V_model</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/05_useAttrs">05_useAttrs</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/06_ref">06_ref</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/07_provide_inject">07_provide_inject</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/08_slottest">08_slot_test</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/08_slottest/slot01">08-2_slot01</RouterLink></div></li>
-        <li><div class="link"><RouterLink to="/09_v_bind">09_vbind</RouterLink></div></li>
-      </ul>
-    </div>
-
-  <div>
-    <ul>
-      <li><div class="link"><RouterLink to="/jslearn">/jslearn</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/jslearn2">/jslearn2</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/jslearn3">/jslear3</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/jslearn4">/jslear4</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/jslearn5">/jslear5</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/learn6">/jslear6</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/modal">/modal</RouterLink></div></li>
-    </ul>
-  </div>  
-  <div>
-    <ul>
-      <li><div class="link"><RouterLink to="/todolist">todolist</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/bmi">bmi</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/shopcar">shopcar</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/pdf">pdf</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/excel">excel</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/multiplicationTable">multiplicationTable</RouterLink></div></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><div class="link"><RouterLink to="/PaymentTypeEdit">PaymentTypeEdit</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/PaymentTypeEdit2">PaymentTypeEdit2</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/PaymentTypeEdit3">PaymentTypeEdit3</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/PaymentTypeEdit4">PaymentTypeEdit4</RouterLink></div></li> 
-      <li><div class="link"><RouterLink to="/PaymentTypeEdit5">PaymentTypeEdit5</RouterLink></div></li> 
-      
-      <li><div class="link"><RouterLink to="/ProductType">ProductType</RouterLink></div></li>      
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><div class="link"><RouterLink to="/weather1">weather1</RouterLink></div></li>
-      <li><div class="link"><RouterLink to="/addition">addition</RouterLink></div></li>
-    </ul>
-  </div>
-    <div>
-    <ul>
-      <li><div class="link"><RouterLink to="/pos">POS</RouterLink></div></li> 
-    </ul>
-  </div>
-</div>
-
+    <NavSection
+      v-for="g in NAV_GROUPS"
+      :key="g.id"
+      :group="g"
+      :isOpen="!!openMap[g.id]"
+      @toggle="toggleSection"
+    />
+  </nav>
 </template>
 
-<script lang="ts">
-import { RouterLink } from 'vue-router';
+<script setup lang="ts">
+import { reactive, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import NavSection from '@/components/menu/NavSection.vue';
+import { NAV_GROUPS } from '@/composites/menu/menu';
 
+const route = useRoute();
+
+// 多開：用 Record<string, boolean>
+const openMap = reactive<Record<string, boolean>>({});
+
+// 切換展開/收合
+function toggleSection(id: string) {
+  openMap[id] = !openMap[id];
+
+  // 若你想改「手風琴（單開）」：
+  for (const k of Object.keys(openMap)) openMap[k] = false;
+  openMap[id] = true;
+}
+
+function closeAll() {
+  for (const k of Object.keys(openMap)) openMap[k] = false
+}
+
+// 自動根據目前路由，把對應群組打開（很實用）
+onMounted(() => {
+  const current = route.path;
+  for (const g of NAV_GROUPS) {
+    if (g.items.some(i => i.to === current || current.startsWith(i.to + '/'))) {
+      openMap[g.id] = true;
+    }
+  }
+});
+
+watch(
+  () => route.path,
+  (p) => {
+    if (p === '/') closeAll()
+  },
+  { immediate: true }
+)
 </script>
 
 <style scoped>
 .navbar {
   display: flex;
-  height: auto;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   background-color: sandybrown;
   color: #fff;
-  padding: 0 20px;
+  padding: 8px 20px;
 }
 
-li{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+.link img { width: 50px; /* 或你要的大小 */ height: 50px; /* 或 auto 保持比例 */ } 
 
-.link img {
-  width: 50px;  /* 或你要的大小 */
-  height: 50px; /* 或 auto 保持比例 */
-}
-
-.link {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 16px;
-  text-align: center;;
-  transition: color 0.3s ease;
-}
+.link { display: inline-block; margin-right: 10px; font-size: 16px; text-align: center;; transition: color 0.3s ease; }
 
 </style>
