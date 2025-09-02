@@ -27,8 +27,8 @@ const weight =ref();
 const bmi =ref();
 
 const calc = () =>{
-   bmi.value = Number(weight.value / (height.value / 100)**2)
-   bmi.value = Number(bmi.value.toFixed(2))
+  bmi.value = Number(weight.value / (height.value / 100)**2)
+  bmi.value = Number(bmi.value.toFixed(2))
 
   //  emit('calc',bmi.value)
 }

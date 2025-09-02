@@ -11,7 +11,7 @@
   <p v-else-if="props.bmi < 30">中度肥胖</p>
   <p v-else-if="props.bmi < 35">重度肥胖</p>
   <p v-else>重度肥胖</p>
- 
+
   
   </div>
   <MyButton type="primary" @onClick="emit('reset')">重設</MyButton>
