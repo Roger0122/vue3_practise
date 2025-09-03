@@ -27,11 +27,15 @@ const openMap = reactive<Record<string, boolean>>({});
 
 // 切換展開/收合
 function toggleSection(id: string) {
-  openMap[id] = !openMap[id];
+  // 型別處理!!可以在!! 會把任何值「強制轉成嚴格的 boolean」。
+  const wasOpen = !!openMap[id];
 
   // 若你想改「手風琴（單開）」：
   for (const k of Object.keys(openMap)) openMap[k] = false;
+  
+  if(!wasOpen){
   openMap[id] = true;
+  }
 }
 
 function closeAll() {
@@ -67,8 +71,16 @@ watch(
   padding: 8px 20px;
 }
 
-.link img { width: 50px; /* 或你要的大小 */ height: 50px; /* 或 auto 保持比例 */ } 
+.link img { 
+  width: 50px;
+  position: absolute; 
+  top:0;
+  right: 0;
+  /* 或你要的大小 */
+  height: 50px;
+  /* 或 auto 保持比例 */
+  } 
 
-.link { display: inline-block; margin-right: 10px; font-size: 16px; text-align: center;; transition: color 0.3s ease; }
+/* .link { display: inline-block; margin-right: 10px; font-size: 16px; text-align: center;; transition: color 0.3s ease; } */
 
 </style>
