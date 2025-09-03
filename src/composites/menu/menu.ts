@@ -70,4 +70,9 @@ export const NAV_GROUPS: NavGroup[] = [
     label: 'POS',
     items: [{ label: 'POS', to: '/pos' }],
   },
+  {
+    id: 'other',
+    label: 'other',
+    items: [{ label: 'other', to: '/other' }],
+  },
 ];

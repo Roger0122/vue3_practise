@@ -21,7 +21,7 @@ export default [
         name:'jslearn4',
         component: () => import('@/view/javaScript_learn/learn4.vue')
     },
-     {
+    {
         path:'/jslearn5',
         name:'jslearn5',
         component: () => import('@/view/javaScript_learn/learn5.vue')

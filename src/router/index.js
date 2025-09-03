@@ -6,6 +6,7 @@ import orderpractise from '@/router/modules/orderpractise.js'
 import paypractise from '@/router/modules/paypractise.js';
 import weather from '@/router/modules/weather.js'
 import pos from '@/router/modules/pos.js'
+import other from '@/router/modules/other.js'
 
 const router = createRouter({
 history: createWebHistory(),
@@ -17,6 +18,7 @@ routes: [
     ...paypractise,
     ...weather,
     ...pos,
+    ...other,
 ],
 })
 export default router
