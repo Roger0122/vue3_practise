@@ -1,7 +1,4 @@
 <template>
-<h2 class=" text-2xl">Other</h2>
-
-
 <!-- 1. JavaScript 基礎
 ----------------------------------------------------------
 變數宣告差異（var / let / const） 
@@ -111,6 +108,15 @@ const Array2 = Array1.map((x) => x * x)
 拆解，比較像是制定初始的值
 
 
+forEach 跟map差異是map會在其中每個值後  會傳一個新的陣列。
+forEach 的遍歷會傳的是單一的值(也就是跟For迴圈輸出結果有點像)
+
+
+find 找到第一個符合回傳，如果都沒有符合的回傳 undefined
+const Array1 = [3,10,20,30,90]
+const Array2 = array1.find((e) => e%3 = 1 ) // 預期10
+const Array3 = array2.find((e) => e >100 ) //預期undefined
+
 
 ----------------------------------------------------------
 物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries
@@ -157,11 +163,49 @@ Jest / Vitest：能寫簡單單元測試
 Git：能處理 branch / merge / rebase / conflict
 DevTools：效能分析、網路請求檢查 -->
 
+  <h2 class=" text-2xl">Other</h2>
+  <div>
+    <!-- 無聊來個小練習吧 BMI -->
+    <div><input type="number" placeholder="請輸入身高 cm" v-model="height">公分</div>
+    <div><input type="number" placeholder="請輸入體重 kg" v-model="weight">公斤</div>
+    <button @click="sumbitHandler" class="bg-gray-300">計算你的BMI</button>
+    <p>你的BMI為: {{ bmi }}</p>
+    <p>建議: {{ support }}</p>
+  </div>
+
 </template>
 
 <script setup>
+import { ref } from 'vue'
 
+const height = ref(0)
+const weight = ref(0)
+const bmi = ref(0)
+const support = ref('')
 
+function sumbitHandler () {
+  if (height.value <= 0 || weight.value <= 0) {
+    support.value = ''
+    alert('請輸入身高體重')
+    return
+  }
+
+  const h = height.value / 100
+  const w = weight.value
+  const raw = w / (h * h)
+
+  bmi.value = Math.round(raw * 10) / 10  
+
+  if (bmi.value < 18.5) {
+    support.value = '「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！'
+  } else if (bmi.value >= 18.5 && bmi.value < 24) {
+    support.value = '恭喜！「健康體重」，要繼續保持！'
+  } else if (bmi.value >= 24 && bmi.value < 27) {
+    support.value = '「體重過重」了，要小心囉，趕快力行「健康體重管理」'
+  } else {
+    support.value = '啊～「肥胖」，需要立刻力行「健康體重管理」囉！'
+  }
+}
 </script>
 
 
