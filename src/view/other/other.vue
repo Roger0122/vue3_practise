@@ -3,8 +3,8 @@
 
 
 <!-- 1. JavaScript 基礎
-
-變數宣告差異（var / let / const） ----------------------------------------------------------
+----------------------------------------------------------
+變數宣告差異（var / let / const） 
 
 let var const 差異,基本var 不用(容易汙染變成全域變數,let=變數意旨可以被變更,const=常數=不可被變更)
 良好的專案基本上使用let 以及const 就可以 var基本上老舊專案才有可能使用。
@@ -15,7 +15,8 @@ let b = 1
 return (a+b) //結果應該是 2吧~}
 console.log(function()) //結果是2 
 
-ES6 語法：解構賦值、展開運算子（...）、模板字串　----------------------------------------------------------
+----------------------------------------------------------
+ES6 語法：解構賦值、展開運算子（...）、模板字串　
 
 解構賦值比較像是 從變數拿東西出來使用 舉例
 const myId  = {
@@ -50,7 +51,8 @@ const { id, name, label } = myId
 
 console.log(`${ name } 號碼是id  今年${label} `)
 
-常見資料型別：Array、Object、Map、Set ---------------------
+----------------------------------------------------------
+常見資料型別：Array、Object、Map、Set 
 Array[] 
 Object {}
 
@@ -68,11 +70,49 @@ map.delete(key) → 刪除
 map.size → 元素數量
 
 const hello1 = new map()
-
 hello1.set(id, '1')
 
+2.Set
+用途: 像Array。 
+可以自動刪除重複值
+方法一樣可以使用
+
+Set.add()
+常見方法：
+set.add(value) → 新增值
+set.has(value) → 檢查有沒有
+set.delete(value) → 刪除
+set.size → 內容數量
+
+----------------------------------------------------------
 
 陣列操作方法：map / filter / reduce / forEach / find
+map Q會改變原陣列嗎~?   A:會的map會建立一個新的陣列。
+
+範例const Array1 =[1,2,3,4,5]
+const Array2 = Array1.map((x) => x * 2)
+
+The current element being processed in the array.
+creates new Array 
+
+A new array with each element being the result of the callback function.
+簡單來說 陣列每一個元素都會依照callback function 回調結果，放入新的一個陣列。
+
+filter 淺拷貝 從 function 回調 符合 function 結果的元素。
+範例:const Array3 =['live','food','money']
+const result = Array3.filter((x) => x ==='live' )
+未通過會傳回一個空陣列。 備註由於回調是function 也可以直接呼叫function去對每一個元素進行驗證。
+
+reduce(累加值  , 初始值(位置, 初始的值))
+回調結果:單一的值
+const Array1 =[1,2,3,4,5]
+const Array2 = Array1.map((x) => x * x)
+
+拆解，比較像是制定初始的值
+
+
+
+----------------------------------------------------------
 物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries
 函式：箭頭函式、this 綁定、閉包（Closure）
 非同步：Promise / async / await / .then .catch
@@ -117,21 +157,9 @@ Jest / Vitest：能寫簡單單元測試
 Git：能處理 branch / merge / rebase / conflict
 DevTools：效能分析、網路請求檢查 -->
 
-<p>範例Map 進階物件方法</p>
-<p>Map 是甚麼 他是ES6追加的新語法 是一個物件,可以透過Map.set 存get去 has 查 size 量 delete 刪</p>
-
-
 </template>
 
 <script setup>
-
-const hello1 = new Map()
-
-hello1.set('id', 1)
-console.log(hello1.get('id')) 
-
-
-
 
 
 </script>
