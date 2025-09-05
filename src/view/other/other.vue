@@ -117,10 +117,8 @@ const Array1 = [3,10,20,30,90]
 const Array2 = array1.find((e) => e%3 = 1 ) // 預期10
 const Array3 = array2.find((e) => e >100 ) //預期undefined
 
-
 ----------------------------------------------------------
 物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries
-
 淺拷貝身拷貝基本差別 淺拷貝表層(記憶體位置相同)
 
 const user = { name: "Roger", info: { age: 30 } };
@@ -155,19 +153,27 @@ const newUser = new Map()
 newUser.set(Object.key(user),Object.values(user))
 newUser.get(age)
 
-js 下週再來看看吧~ 腦休息
+----------------------------------------------------------
 函式：箭頭函式、this 綁定、閉包（Closure）
+箭頭函式
+function a(a, b){ return a + b}
+function b((a, b) => a+b )
+我認知可以代替() 跟return效果。
+function a(() => {})
 
+this 綁定的5種姿態 出勤打卡紀錄表。
+
+閉包 又是?
 
 
 非同步：Promise / async / await / .then .catch
+
 事件循環（Event Loop）/ 微任務 & 巨任務
+
 錯誤處理：try/catch、throw、Error 物件
 
 
-
 2. CSS / Tailwind 基礎
-
 Flexbox（橫向/縱向置中、space-between）
 Grid（2D 版面設計）
 RWD：用 @media 或 Tailwind 的 sm: md: lg:
@@ -180,12 +186,15 @@ Vue 生命週期（onMounted, onUpdated, onUnmounted）
 ref vs reactive 的差別
 Props 傳值、Emit 傳事件
 v-model 雙向綁定（含多層組件的傳遞）
+
 Computed vs Watch（何時用哪個？）
 Router：動態路由參數、路由守衛
+
 Pinia：state / getters / actions
+
 元件設計：父子組件拆分、slot 使用
-v-if / v-show 差別
-v-for + key 的正確使用
+v-if / v-show 差別 (實體銷毀&不銷毀)
+v-for + key 的正確使用 
 
 4. 實務必備能力
 
