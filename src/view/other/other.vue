@@ -120,10 +120,51 @@ const Array3 = array2.find((e) => e >100 ) //預期undefined
 
 ----------------------------------------------------------
 物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries
+
+淺拷貝身拷貝基本差別 淺拷貝表層(記憶體位置相同)
+
+const user = { name: "Roger", info: { age: 30 } };
+const copy = { ...user };
+copy.info.age = 18;
+console.log(user.info.age); // 請問會輸出什麼？
+會輸出18 因為淺拷貝拷貝表層  記憶體指向位置相同。
+
+
+const user = { name: "Roger", info: { age: 30 } };
+const deepCopy = JSON.parse(JSON.stringify(user));
+deepCopy.info.age = 18;
+console.log(user.info.age); // 請問會輸出什麼？
+深拷貝獨立物件 會輸出原本的30(不受影響)
+
+
+const product = { id: 1, name: "Laptop", price: 20000 };
+// 請用 Object.keys 取出所有屬性名稱 → ["id", "name", "price"]
+取出所有 key
+console.log(Object.keys(product))
+取出所有 value
+console.log(Object.values(product))
+轉換成 entries
+console.log(Object.entries(product))
+
+應用題
+用 Object.entries 把物件轉成 Map(特殊物件題)
+
+const user = { name: "Roger", age: 30 };
+// 請轉換成 Map，並取出 age → 30
+const newUser = new Map()
+newUser.set(Object.key(user),Object.values(user))
+newUser.get(age)
+
+js 下週再來看看吧~ 腦休息
 函式：箭頭函式、this 綁定、閉包（Closure）
+
+
+
 非同步：Promise / async / await / .then .catch
 事件循環（Event Loop）/ 微任務 & 巨任務
 錯誤處理：try/catch、throw、Error 物件
+
+
 
 2. CSS / Tailwind 基礎
 
@@ -163,49 +204,88 @@ Jest / Vitest：能寫簡單單元測試
 Git：能處理 branch / merge / rebase / conflict
 DevTools：效能分析、網路請求檢查 -->
 
-  <h2 class=" text-2xl">Other</h2>
-  <div>
     <!-- 無聊來個小練習吧 BMI -->
-    <div><input type="number" placeholder="請輸入身高 cm" v-model="height">公分</div>
+    <!-- <div><input type="number" placeholder="請輸入身高 cm" v-model="height">公分</div>
     <div><input type="number" placeholder="請輸入體重 kg" v-model="weight">公斤</div>
     <button @click="sumbitHandler" class="bg-gray-300">計算你的BMI</button>
     <p>你的BMI為: {{ bmi }}</p>
     <p>建議: {{ support }}</p>
-  </div>
+  </div> -->
 
 </template>
 
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 
-const height = ref(0)
-const weight = ref(0)
-const bmi = ref(0)
-const support = ref('')
+// const height = ref(0)
+// const weight = ref(0)
+// const bmi = ref(0)
+// const support = ref('')
 
-function sumbitHandler () {
-  if (height.value <= 0 || weight.value <= 0) {
-    support.value = ''
-    alert('請輸入身高體重')
-    return
-  }
+// function sumbitHandler () {
+//   if (height.value <= 0 || weight.value <= 0) {
+//     support.value = ''
+//     alert('請輸入身高體重')
+//     return
+//   }
 
-  const h = height.value / 100
-  const w = weight.value
-  const raw = w / (h * h)
+//   const h = height.value / 100
+//   const w = weight.value
+//   const raw = w / (h * h)
 
-  bmi.value = Math.round(raw * 10) / 10  
+//   bmi.value = Math.round(raw * 10) / 10  
 
-  if (bmi.value < 18.5) {
-    support.value = '「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！'
-  } else if (bmi.value >= 18.5 && bmi.value < 24) {
-    support.value = '恭喜！「健康體重」，要繼續保持！'
-  } else if (bmi.value >= 24 && bmi.value < 27) {
-    support.value = '「體重過重」了，要小心囉，趕快力行「健康體重管理」'
-  } else {
-    support.value = '啊～「肥胖」，需要立刻力行「健康體重管理」囉！'
-  }
-}
+//   if (bmi.value < 18.5) {
+//     support.value = '「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！'
+//   } else if (bmi.value >= 18.5 && bmi.value < 24) {
+//     support.value = '恭喜！「健康體重」，要繼續保持！'
+//   } else if (bmi.value >= 24 && bmi.value < 27) {
+//     support.value = '「體重過重」了，要小心囉，趕快力行「健康體重管理」'
+//   } else {
+//     support.value = '啊～「肥胖」，需要立刻力行「健康體重管理」囉！'
+//   }
+// }
+
+// const user = { name: "Roger", age: 30 };
+// // 請轉換成 Map，並取出 age → 30
+// const newUser = new Map(Object.entries(user))
+// console.log(newUser)
+// console.log(newUser.get('age'))
+
+
+// const order = { orderId: 123, amount: 500, status: "paid" };
+// 請計算這個物件有幾個屬性（提示：Object.keys）
+
+// const obj = { a: 1, b: 2, c: 3 };
+// // 請轉換成 {1: "a", 2: "b", 3: "c"} 希望結果是靜態物件不是鍵值的物件， 所以要用Object.fromEntries（）
+// const reversed = Object.fromEntries(
+//   Object.entries(obj).map(([key, value]) => [value, key])
+// );
+
+// console.log(reversed); 
+// // { 1: "a", 2: "b", 3: "c" }
+
+
+// const user = { name: "Roger", age: 30, password: "123456" };
+// // 請建立一個新物件，移除 password
+// const NewMap = Object.fromEntries(
+// (Object.entries(user).filter(([key ]) => key !=='password'))
+// )
+
+// console.log(NewMap)
+
+const data = {
+  user: { name: "Roger", info: { age: 30, address: { city: "Taipei" } } }
+};
+// 請說明：如果用淺拷貝 vs 深拷貝，修改 city 時會有什麼差別？
+const Copy1 = data  //指派賦值 不適拷貝喔
+const shallowCopy = {...data}
+const deepCopy = JSON.parse(JSON.stringify(data))
+data.user.info.address.city = 'japan'
+
+console.log('淺',shallowCopy.user.info.address.city)
+console.log('深',deepCopy.user.info.address.city)
+
 </script>
 
 
