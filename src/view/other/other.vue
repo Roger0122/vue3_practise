@@ -156,14 +156,19 @@ newUser.get(age)
 ----------------------------------------------------------
 函式：箭頭函式、this 綁定、閉包（Closure）
 箭頭函式
-function a(a, b){ return a + b}
-function b((a, b) => a+b )
-我認知可以代替() 跟return效果。
-function a(() => {})
+function a(a, b){
+  return a + b
+}
+function b((a, b) => a + b ) 這是錯的
+const b = (a, b) => a + b 這才是正確
+我認知可以代替() 跟return效果,再不複雜的狀況下可以向 => 組成 去代替return 以及 {}
+備註: 由於箭頭函數不可以用function呼叫 必須使用 const 或let 函數命名的方式。
 
-this 綁定的5種姿態 出勤打卡紀錄表。
+
+this 綁定的5種姿態
 
 閉包 又是?
+
 
 
 非同步：Promise / async / await / .then .catch
@@ -283,17 +288,25 @@ DevTools：效能分析、網路請求檢查 -->
 
 // console.log(NewMap)
 
-const data = {
-  user: { name: "Roger", info: { age: 30, address: { city: "Taipei" } } }
-};
-// 請說明：如果用淺拷貝 vs 深拷貝，修改 city 時會有什麼差別？
-const Copy1 = data  //指派賦值 不適拷貝喔
-const shallowCopy = {...data}
-const deepCopy = JSON.parse(JSON.stringify(data))
-data.user.info.address.city = 'japan'
+// const data = {
+//   user: { name: "Roger", info: { age: 30, address: { city: "Taipei" } } }
+// };
+// // 請說明：如果用淺拷貝 vs 深拷貝，修改 city 時會有什麼差別？
+// const Copy1 = data  //指派賦值 不適拷貝喔
+// const shallowCopy = {...data}
+// const deepCopy = JSON.parse(JSON.stringify(data))
+// data.user.info.address.city = 'japan'
 
-console.log('淺',shallowCopy.user.info.address.city)
-console.log('深',deepCopy.user.info.address.city)
+// console.log('淺',shallowCopy.user.info.address.city)
+// console.log('深',deepCopy.user.info.address.city)
+
+
+function a(a, b){ return a + b}
+const b =(a, b) => a + b
+
+console.log ('a',a(1,3))
+console.log('b',b(1,3));
+
 
 </script>
 

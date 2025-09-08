@@ -10,9 +10,12 @@ import navbar from '@/view/navbar.vue'
 </nav>
 
 <body>
+
 <RouterView v-slot="{ Component }">
   <transition name="fade">
+    <div>
     <component :is="Component" />
+    </div>
   </transition>
 </RouterView>
 
