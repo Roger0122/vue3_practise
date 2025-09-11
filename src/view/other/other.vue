@@ -1,16 +1,5 @@
 <template>
 <!-- 1. JavaScript 基礎
-----------------------------------------------------------
-變數宣告差異（var / let / const） 
-
-let var const 差異,基本var 不用(容易汙染變成全域變數,let=變數意旨可以被變更,const=常數=不可被變更)
-良好的專案基本上使用let 以及const 就可以 var基本上老舊專案才有可能使用。
-真實理解 var =全域變數, let ,const 區域變數,舉例離開
-function  name(){
-const a = 1
-let b = 1
-return (a+b) //結果應該是 2吧~}
-console.log(function()) //結果是2 
 
 ----------------------------------------------------------
 ES6 語法：解構賦值、展開運算子（...）、模板字串　
@@ -166,23 +155,38 @@ const b = (a, b) => a + b 這才是正確
 
 
 this 綁定的5種姿態
-
-閉包 又是?
-
+1.this 的值 取決於「呼叫方式」，而不是函式定義在哪裡。
 
 
+1.物件狀態下的this是自己。
+const obj = {
+'a':1,
+'b':2,
+'c': () => console.log('a','b')
+}
+
+console.log(obj.c)  // 2?
+
+閉包 又是? 跟function 作用域有關
+基本上 變數定義時的作用域有關。
+一般變數在外層建立時，會= 全域變數 = windows.變數名
+
+當變數在function建立時,let const 的作用域在function當中
+此時透過在外面log時不會有資料 undefined
+
+-------------------------------------------------------
 非同步：Promise / async / await / .then .catch
-
 事件循環（Event Loop）/ 微任務 & 巨任務
-
 錯誤處理：try/catch、throw、Error 物件
 
-
+-------------------------------------------------------
+今天全心CSS
 2. CSS / Tailwind 基礎
 Flexbox（橫向/縱向置中、space-between）
 Grid（2D 版面設計）
 RWD：用 @media 或 Tailwind 的 sm: md: lg:
 常見樣式：按鈕 hover、disabled 狀態
+
 Tailwind：能不看文件寫出常見排版（px, py, flex, grid, text, bg, rounded, shadow）
 
 3. Vue 3 基礎
@@ -225,6 +229,10 @@ DevTools：效能分析、網路請求檢查 -->
     <p>你的BMI為: {{ bmi }}</p>
     <p>建議: {{ support }}</p>
   </div> -->
+
+  <!-- <p>Input: {{ a }}</p>
+  <p>Output:{{ b }}</p>
+  <p>計算有幾個0:{{ Conut1  }}</p> -->
 
 </template>
 
@@ -301,12 +309,51 @@ DevTools：效能分析、網路請求檢查 -->
 // console.log('深',deepCopy.user.info.address.city)
 
 
-function a(a, b){ return a + b}
-const b =(a, b) => a + b
+// function a(a, b){ return a + b}
+// const b =(a, b) => a + b
 
-console.log ('a',a(1,3))
-console.log('b',b(1,3));
+// console.log ('a',a(1,3))
+// console.log('b',b(1,3));
 
+
+// const obj = {
+// 'a':1,
+// 'b':2,
+// c(){
+//   const inner = () => console.log(this.a + this.b)
+//   inner()
+//   }
+// }
+
+// obj.c()
+
+// 1,不改變原陣列長度,2碰到0時就往右邊追加0
+// Input: arr = [1,0,2,3,0,4,5,0]
+// Output:      [1,0,0,2,3,0,0,4]
+// Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
+// 解題想法 思考看看。 
+// 已知陣列長度為8 索引值為0 ~ 7 , 所以更新陣列不可以超過8,索引值  0~7 萬一今天給的長度不一樣不就要? 索引最大值length-1
+// 
+// const a = [1,0,2,3,0,4,5,0]
+
+// duplicateZeros(a)
+
+// function duplicateZeros(arr) {
+//   const n = arr.length;
+//   let zeroCount = 0;
+
+//   // 1) 數 0 有幾個,計算偏移量
+//   for (let v of arr) if (v === 0) zeroCount++;
+//   // 2) 從右往左寫回,限制符合長度
+//   // j 是「理想終點」索引，可能會超出 n-1，所以寫回前要檢查 j < n
+//   for (let i = n - 1, j = n + zeroCount - 1; i >= 0; i--, j--) {
+//     if (j < n) arr[j] = arr[i];     // 把原值搬到新位置（若在範圍內）
+//     if (arr[i] === 0) {
+//       j--;                          // 為「複製的 0」空出一格
+//       if (j < n) arr[j] = 0;        // 寫入複製的 0（若在範圍內）
+//     }
+//   }
+// }
 
 </script>
 

@@ -73,6 +73,10 @@ export const NAV_GROUPS: NavGroup[] = [
   {
     id: 'other',
     label: 'other',
-    items: [{ label: 'other', to: '/other' }],
+    items: [
+      { label: 'other', to: '/other' },
+      { label: '變數差異', to: '/varDifferent'},
+    
+    ],
   },
 ];
