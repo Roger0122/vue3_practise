@@ -78,6 +78,8 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '變數差異', to: '/varDifferent'},
       { label: '賦值', to:'/Valuation'},
       { label: '資料型別', to:'/datatype'},
+      { label: '陣列方法', to:'/arrayfn'},
+      { label: '物件操作', to:'/objectfn'},
     ],
   },
 ];
