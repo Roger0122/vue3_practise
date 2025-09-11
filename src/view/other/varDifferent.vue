@@ -13,8 +13,13 @@ const a = 1
 let b = 1
 return (a+b)  結果應該是 2 吧~
 console.log(function()) 結果會是2
-
 </pre>
+
+<code>
+  
+</code>
+
+
 </template>
 
 <script setup>
