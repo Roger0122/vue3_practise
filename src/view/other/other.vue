@@ -96,43 +96,11 @@ DevTools：效能分析、網路請求檢查 -->
 </template>
 
 <script setup>
-// import { ref } from 'vue'
-
-// const height = ref(0)
-// const weight = ref(0)
-// const bmi = ref(0)
-// const support = ref('')
-
-// function sumbitHandler () {
-//   if (height.value <= 0 || weight.value <= 0) {
-//     support.value = ''
-//     alert('請輸入身高體重')
-//     return
-//   }
-
-//   const h = height.value / 100
-//   const w = weight.value
-//   const raw = w / (h * h)
-
-//   bmi.value = Math.round(raw * 10) / 10  
-
-//   if (bmi.value < 18.5) {
-//     support.value = '「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！'
-//   } else if (bmi.value >= 18.5 && bmi.value < 24) {
-//     support.value = '恭喜！「健康體重」，要繼續保持！'
-//   } else if (bmi.value >= 24 && bmi.value < 27) {
-//     support.value = '「體重過重」了，要小心囉，趕快力行「健康體重管理」'
-//   } else {
-//     support.value = '啊～「肥胖」，需要立刻力行「健康體重管理」囉！'
-//   }
-// }
-
 // const user = { name: "Roger", age: 30 };
 // // 請轉換成 Map，並取出 age → 30
 // const newUser = new Map(Object.entries(user))
 // console.log(newUser)
 // console.log(newUser.get('age'))
-
 
 // const order = { orderId: 123, amount: 500, status: "paid" };
 // 請計算這個物件有幾個屬性（提示：Object.keys）

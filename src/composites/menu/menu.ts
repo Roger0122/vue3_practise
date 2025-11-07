@@ -82,4 +82,11 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '物件操作', to:'/objectfn'},
     ],
   },
+    {
+    id: 'API',
+    label: 'API',
+    items: [
+      { label: 'API1', to: '/API1' },
+    ],
+  },
 ];

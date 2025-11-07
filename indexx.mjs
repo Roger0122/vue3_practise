@@ -18,7 +18,7 @@ app.get('/api/weather', async (req, res) => {
         format: 'JSON'
       }
     })
-   
+  
     res.json(data)
   } catch(error) {
     console.error('轉發 CWA　API 時錯誤', error.message)

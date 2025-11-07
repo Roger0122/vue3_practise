@@ -2,8 +2,10 @@
 <h1 class="text-3xl">物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries</h1>
 
 <pre>
-物件操作：深拷貝 vs 淺拷貝、Object.keys / Object.values / Object.entries
-淺拷貝 深拷貝 基本差別 淺拷貝 表層(記憶體位置相同)
+物件操作：深拷貝 vs 淺拷貝
+Object.keys / Object.values / Object.entries
+基本差別
+淺拷貝 表層(記憶體位置相同)
 
 const user = { name: "Roger", info: { age: 30 } };
 const copy = { ...user };

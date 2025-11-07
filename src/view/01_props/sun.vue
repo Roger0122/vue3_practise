@@ -1,10 +1,10 @@
 <template>
   <div class="sun">
-    <p>我是子組件</p>
-    <p>{{ message }}</p>
-   <p>{{ BigMoney }}</p>
-   
-   <MyButton type="primary" @onClick="fatherGift">我看看父親給我甚麼</MyButton>
+  <p>我是子組件</p>
+  <p>{{ message }}</p>
+  <p>{{ BigMoney }}</p>
+  
+  <MyButton type="primary" @onClick="fatherGift">我看看父親給我甚麼</MyButton>
   </div>
 </template>
 
