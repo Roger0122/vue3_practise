@@ -27,7 +27,7 @@ const items = [
 { name:'網路層', No:3, label:'網路位置IP位置,地址'},
 { name:'傳輸層', No:4, label:'TCP/協定 傳送資料'},
 { name:'會議層', No:5, label:'建立網路協定完成後中斷,(資料傳輸完成後)' },
-{ name:'工作層', No:6, label:'ASCII編碼 編譯 轉譯 獲得資料的層級'},
+{ name:'工作層/展示層', No:6, label:'ASCII編碼 編譯 轉譯 獲得資料的層級'},
 { name:'應用層', No:7, label:'應用軟體,線上遊戲等等'},
 ]
 </script>
