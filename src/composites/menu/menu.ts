@@ -4,6 +4,13 @@ export type NavGroup = { id: string; label: string; items: NavItem[] };
 
 export const NAV_GROUPS: NavGroup[] = [
   {
+    id:'hmtl',
+    label:'html 關聯',
+    items:[
+      {label: 'html_learn', to: '/html_learn'},
+    ],
+  },
+  {
     id: 'vue',
     label: 'Vue 關聯',
     items: [

@@ -8,11 +8,13 @@ import weather from '@/router/modules/weather.js'
 import pos from '@/router/modules/pos.js'
 import other from '@/router/modules/other.js'
 import api from '@/router/modules/API.js'
+import htmlLearn from '@/router/modules/htmllearn.js'
 
 const router = createRouter({
 history: createWebHistory(),
 routes: [
     { path:'/', name: 'home',component: home,},
+    ...htmlLearn,
     ...vuepractise,
     ...jspractise,
     ...orderpractise,

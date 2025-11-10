@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onMounted, watch } from 'vue';
+import { ref, reactive, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import NavSection from '@/components/menu/NavSection.vue';
 import { NAV_GROUPS } from '@/composites/menu/menu';

@@ -9,7 +9,6 @@
       {{ group.label }}
       <span class="chevron" :class="{ open: isOpen }">▾</span>
     </button>
-
     <ul
       :id="panelId"
       v-show="isOpen"
