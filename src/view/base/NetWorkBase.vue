@@ -30,6 +30,16 @@ const items = [
 { name:'工作層/展示層', No:6, label:'ASCII編碼 編譯 轉譯 獲得資料的層級'},
 { name:'應用層', No:7, label:'應用軟體,線上遊戲等等'},
 ]
+
+
+// Layer 7: Application    [HTTP, DNS, SSH]
+// Layer 6: Presentation   [TLS, Compression]
+// Layer 5: Session        [Auth, Connections]
+// Layer 4: Transport      [TCP, UDP]
+// Layer 3: Network        [IP, Routing]
+// Layer 2: Data Link      [Ethernet, MAC]
+// Layer 1: Physical       [Cables, Signals]
+
 </script>
 
 <style scoped>
