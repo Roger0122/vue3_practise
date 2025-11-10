@@ -1,4 +1,10 @@
 <template>
+    <NetWorkBase
+    title="Net_Work_Base"
+    >
+    </NetWorkBase>
+
+
   <div class="flex px-3">
     <input type="text" placeholder="編號" v-model="NewPro.unNum">
     <input type="text" placeholder="品名" v-model="NewPro.ProName">
@@ -58,10 +64,12 @@
       </li>
     </ul>
   </div>
+ 
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import NetWorkBase from '@/view/base/NetWorkBase.vue'
 
 const ProList = ref([
   { id: 1, unNum: 1, ProName: '漢堡', ProType: '食品' },
