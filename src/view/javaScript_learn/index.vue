@@ -41,21 +41,22 @@
     <ul>
         <li><h3>if方法</h3>
         <p>if方法用於判斷資料是否符合條件</p>
-            <p>if(1>2) true,`if(1<2) false`</p>
+            <p>if(1>2) true,`if(1 < 2) false`</p>
             <p>型別0 會被視為false 型別1 會被視為true</p>
             <p>當然也可以使用else if 來判斷多個條件
-                else if(1>2) true,`else if(1<2) false`
+                else if(1>2) true,`else if( 1 < 2) false`
             </p>
             <p>也可以使用else 來判斷最後的結果
-                else if(1>2) true,`else if(1<2) false`
-</p>
+            else if(1>2) true,`else if( 1 < 2 ) false`
+            </p>
         </li>
         <li><h3>for方法</h3>
         <p>for方法 用於重複性的代碼。
             可以用於陣列或物件的遍歷(重複)
         </p>
-        <p>for(let i=0;i<10;i++){console.log(i)} 
-        </p></li>
+        <p>for(let i=0 ; i < 10; i++ ) { console.log(i) } 
+        </p>
+        </li>
 
     </ul>
     

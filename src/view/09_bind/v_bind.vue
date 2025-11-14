@@ -84,13 +84,27 @@
 <!-- 綁定條件 -->
 <input type="text" v-model.trim="message"  :class= "{ 'error': message.length >= 3 }"/>
 
+<button @click="showbind = !showbind">彈窗試試看</button>
+  <v_bindtest
+  v-if="showbind"
+  @close="closethis"
+  :colorText="colorText"
+  :checkNames="checkNames"
+  @chance="chanceThis"
+  >
+  </v_bindtest>
+
 
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import v_bindtest from '@/view/09_bind/v_bindtest.vue';
 const text =  ref('Hello')
-  
+const showbind = ref(false)  
+const 自訂義 ='123'
+
+
 const message = ref('')
 const msg = ref('');
 const textNum1 = ref(0)
@@ -120,7 +134,18 @@ const colorReset = () => {
   colorText.value = colorChange.value ? '紅色' : '藍色'
 }
 
+function closethis(nu1,Num2){
+  colorText.value = nu1
+  console.log(nu1,Num2);
+  console.log(自訂義);
+  colorReset()
+  showbind.value = false
+}
 
+function chanceThis(a){
+  checkNames.value = a
+  showbind.value = false
+}
 
 // ✅ 台幣 = 日圓 * 0.21
 const twd = computed({

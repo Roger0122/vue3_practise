@@ -37,6 +37,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '/jslear4', to: '/jslearn4' },
       { label: '/jslear5', to: '/jslearn5' },
       { label: '/jslear6', to: '/learn6' },
+      { label: '/jslear7', to: '/learn7' },
       { label: '/modal', to: '/modal' },
     ],
   },
