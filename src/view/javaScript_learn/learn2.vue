@@ -17,7 +17,7 @@
     const Numberone =ref(1);
     const Numbertwo =ref(2);
     
-   
+
     </script>
     
     <style scoped>
